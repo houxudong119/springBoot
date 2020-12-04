@@ -1,0 +1,19 @@
+#contextpath和port
+server:
+  port: 9090
+  servlet:
+    context-path: /p2p
+#dubbo
+spring:
+  application:
+    name: p2p-web
+  dubbo:
+    registry: zookeeper://192.168.164.130:2181
+
+  redis:
+    host: 192.168.164.130
+    port: 6379
+    password: 119
+  thymeleaf:
+    cache: false
+    mode: HTML

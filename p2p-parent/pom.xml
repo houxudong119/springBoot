@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--springboot父依赖-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.0</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.bjpowernode</groupId>
+    <artifactId>p2p-parent</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>../p2p-api</module>
+        <module>../p2p-commons</module>
+        <module>../p2p-dataService</module>
+        <module>../p2p-web</module>
+    </modules>
+
+    <properties>
+        <mybatis-spring-boot-starter-version>2.1.4</mybatis-spring-boot-starter-version>
+        <zkclient.version>0.10</zkclient.version>
+        <dubbo-spring-boot-starter-version>2.0.0</dubbo-spring-boot-starter-version>
+        <lombok.version>1.16.10</lombok.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--data依赖-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--mybatis依赖-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot-starter-version}</version>
+            </dependency>
+            <!--zookeeper依赖-->
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!--dubbo依赖-->
+            <dependency>
+                <groupId>com.alibaba.spring.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-spring-boot-starter-version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!--统一jdk的版本-->
+        <plugins>
+            <!-- 编译插件 -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- 插件的版本 -->
+                <version>3.5.1</version>
+                <!-- 编译级别 -->
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <!-- 编码格式 -->
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

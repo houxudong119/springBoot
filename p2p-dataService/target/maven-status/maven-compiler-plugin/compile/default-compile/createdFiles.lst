@@ -1,0 +1,8 @@
+com\bjpowernode\mapper\RechargeRecordMapper.class
+com\bjpowernode\mapper\IncomeRecordMapper.class
+com\bjpowernode\mapper\BidInfoMapper.class
+com\bjpowernode\mapper\UserMapper.class
+com\bjpowernode\mapper\FinanceAccountMapper.class
+com\bjpowernode\mapper\LoanInfoMapper.class
+com\bjpowernode\service\LoanInfoServiceImpl.class
+com\bjpowernode\DataService.class
