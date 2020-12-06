@@ -1,8 +1,12 @@
 com\bjpowernode\domain\RechargeRecord.class
 com\bjpowernode\domain\Student.class
 com\bjpowernode\domain\IncomeRecord.class
+com\bjpowernode\service\UserService.class
 com\bjpowernode\domain\BidInfo.class
+com\bjpowernode\vo\UserBidInfo.class
 com\bjpowernode\domain\FinanceAccount.class
 com\bjpowernode\service\LoanInfoService.class
+com\bjpowernode\service\BidInfoService.class
 com\bjpowernode\domain\LoanInfo.class
 com\bjpowernode\domain\User.class
+com\bjpowernode\service\IncomeRecordService.class

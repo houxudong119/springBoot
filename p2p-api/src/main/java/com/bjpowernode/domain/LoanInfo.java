@@ -1,8 +1,10 @@
 package com.bjpowernode.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LoanInfo {
+public class LoanInfo implements Serializable {
+    private static final long serialVersionUID = 7080221453469567016L;
     private Integer id;
 
     private String productName;

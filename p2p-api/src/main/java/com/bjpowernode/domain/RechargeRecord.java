@@ -1,8 +1,10 @@
 package com.bjpowernode.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class RechargeRecord {
+public class RechargeRecord implements Serializable {
+    private static final long serialVersionUID = 8720632745962851156L;
     private Integer id;
 
     private Integer uid;

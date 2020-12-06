@@ -1,8 +1,10 @@
 package com.bjpowernode.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = -534183582408765485L;
     private Integer id;
 
     private String phone;

@@ -1,6 +1,9 @@
 package com.bjpowernode.domain;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable {
+    private static final long serialVersionUID = 7727397512364833059L;
     private String id;
 
     private String name;

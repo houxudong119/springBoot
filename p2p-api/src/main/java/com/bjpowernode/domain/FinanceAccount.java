@@ -1,6 +1,9 @@
 package com.bjpowernode.domain;
 
-public class FinanceAccount {
+import java.io.Serializable;
+
+public class FinanceAccount implements Serializable {
+    private static final long serialVersionUID = 2789834918994559762L;
     private Integer id;
 
     private Integer uid;

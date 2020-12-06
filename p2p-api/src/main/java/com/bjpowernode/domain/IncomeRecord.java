@@ -1,8 +1,10 @@
 package com.bjpowernode.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class IncomeRecord {
+public class IncomeRecord implements Serializable {
+    private static final long serialVersionUID = 8152171714062223767L;
     private Integer id;
 
     private Integer uid;
