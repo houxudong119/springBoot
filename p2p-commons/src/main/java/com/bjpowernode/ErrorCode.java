@@ -7,4 +7,5 @@ package com.bjpowernode;
  */
 public class ErrorCode {
     public static final int NO_ERROR = 0;
+    public static final int ERROR = 1;
 }

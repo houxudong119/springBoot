@@ -2,12 +2,14 @@ package com.bjpowernode.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.bjpowernode.Constants;
+import com.bjpowernode.domain.LoanInfo;
 import com.bjpowernode.mapper.LoanInfoMapper;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -34,5 +36,21 @@ public class LoanInfoServiceImpl implements LoanInfoService {
             }
         }
         return rateAverage;
+    }
+
+    @Override
+    public List<LoanInfo> queryLoanByTypePage(Integer loan, int pageNo, int pageSize) {
+        return loanInfoMapper.selectLoanByTypePage(loan,pageNo,pageSize);
+    }
+
+    @Override
+    public Integer countLoanByTypeForPage(Integer productType) {
+
+        return loanInfoMapper.selectCountLoanByTypeForPage(productType);
+    }
+
+    @Override
+    public LoanInfo queryDetailLoanById(Integer id) {
+        return loanInfoMapper.selectByPrimaryKey(id);
     }
 }

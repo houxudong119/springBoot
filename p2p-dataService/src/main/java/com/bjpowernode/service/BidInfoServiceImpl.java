@@ -3,11 +3,13 @@ package com.bjpowernode.service;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.bjpowernode.Constants;
 import com.bjpowernode.mapper.BidInfoMapper;
+import com.bjpowernode.vo.UserBidInfo;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -34,6 +36,17 @@ public class BidInfoServiceImpl implements BidInfoService {
             }
         }
         return totalBidMoney;
+    }
+
+    /**
+     *  查询产品的购买人等信息
+     * @param id   产品的id
+     * @return  返回自定义类
+     */
+    @Override
+    public List<UserBidInfo> queryLoanRecordBidInfo(Integer id) {
+        List<UserBidInfo> userBidInfos = bidInfoMapper.selectBidRecords(id);
+        return userBidInfos;
     }
 
 }

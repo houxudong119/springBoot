@@ -31,8 +31,26 @@
 	b_loan_info
   </select>
 
+  <select id="selectLoanByTypePage" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List" />
+    from
+      b_loan_info
+    WHERE
+      product_type = #{loan}
+    order by rate desc
+    limit #{pageNo},#{pageSize}
+  </select>
 
-
+  <!--根据产品类型查询条数-->
+  <select id="selectCountLoanByTypeForPage" resultType="java.lang.Integer">
+    select
+        count(*)
+    from
+         b_loan_info
+    where
+         product_type = #{productType}
+  </select>
 
 
 
@@ -47,6 +65,8 @@
     from b_loan_info
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from b_loan_info

@@ -17,7 +17,20 @@
     select sum(bid_money) from b_bid_info
   </select>
 
-
+  <select id="selectBidRecords" resultType="com.bjpowernode.vo.UserBidInfo">
+    SELECT
+      u.phone as phone,
+      b.bid_money as bidMoney,
+      b.bid_time as bidTime
+    FROM
+      b_bid_info b
+        JOIN u_user u ON b.uid = u.id
+    WHERE
+      b.loan_id = #{id}
+    ORDER BY
+      bid_time DESC
+    LIMIT 0,5
+  </select>
 
 
 
@@ -27,6 +40,7 @@
     from b_bid_info
     where id = #{id,jdbcType=INTEGER}
   </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from b_bid_info
     where id = #{id,jdbcType=INTEGER}

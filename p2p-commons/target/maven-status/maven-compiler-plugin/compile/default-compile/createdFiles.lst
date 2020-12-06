@@ -1,4 +1,5 @@
 com\bjpowernode\IndexData.class
 com\bjpowernode\Result.class
+com\bjpowernode\PageInfo.class
 com\bjpowernode\ErrorCode.class
 com\bjpowernode\Constants.class

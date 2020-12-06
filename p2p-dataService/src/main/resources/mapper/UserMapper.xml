@@ -22,7 +22,12 @@
         u_user
   </select>
 
-
+  <select id="selectUserByPhone" resultMap="BaseResultMap">
+    select
+        <include refid="Base_Column_List" />
+    from u_user
+        where phone = #{phone}
+  </select>
 
 
 
@@ -38,6 +43,7 @@
     from u_user
     where id = #{id,jdbcType=INTEGER}
   </select>
+
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from u_user

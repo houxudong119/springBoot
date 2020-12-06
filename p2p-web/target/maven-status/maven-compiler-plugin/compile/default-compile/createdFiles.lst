@@ -1,2 +1,4 @@
 com\bjpowernode\controller\IndexController.class
 com\bjpowernode\WebApplication.class
+com\bjpowernode\controller\RegisterController.class
+com\bjpowernode\controller\LoanController.class

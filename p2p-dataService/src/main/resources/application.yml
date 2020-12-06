@@ -18,3 +18,6 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+logging:
+  config: classpath:slf4j.xml
